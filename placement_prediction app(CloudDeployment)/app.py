@@ -58,8 +58,9 @@ def predict():
 
     # make the prediction using the model
     prediction = response_scoring.json()
+    prediction_value = prediction['predictions'][0]['values'][0][0]
     # convert the prediction to a string
-    if prediction == 0:
+    if prediction_value == 0:
         output = "You may Not get Placed. IMPROVE YOUR SKILLS"
     else:
         output = "Wow You have a chance to get Placed !"
